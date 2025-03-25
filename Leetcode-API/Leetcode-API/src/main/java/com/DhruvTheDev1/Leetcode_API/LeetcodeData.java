@@ -1,44 +1,48 @@
 package com.DhruvTheDev1.Leetcode_API;
 
 public class LeetcodeData {
-  private Integer easy;
-  private Integer medium;
-  private Integer hard;
-  private Integer total;
+  private int easy;
+  private int medium;
+  private int hard;
+  private int total;
 
-  public LeetcodeData() {
-
+  // testing
+  public LeetcodeData(int easy, int medium, int hard, int total) {
+    this.easy = easy;
+    this.medium = medium;
+    this.hard = hard;
+    this.total = total;
   }
 
-  public Integer getEasy() {
+  public int getEasy() {
     return easy;
   }
 
-  public void setEasy(Integer easy) {
+  public void setEasy(int easy) {
     this.easy = easy;
   }
 
-  public Integer getMedium() {
+  public int getMedium() {
     return medium;
   }
 
-  public void setMedium(Integer medium) {
+  public void setMedium(int medium) {
     this.medium = medium;
   }
 
-  public Integer getHard() {
+  public int getHard() {
     return hard;
   }
 
-  public void setHard(Integer hard) {
+  public void setHard(int hard) {
     this.hard = hard;
   }
 
-  public Integer getTotal() {
+  public int getTotal() {
     return total;
   }
 
-  public void setTotal(Integer total) {
+  public void setTotal(int total) {
     this.total = total;
   }
 
