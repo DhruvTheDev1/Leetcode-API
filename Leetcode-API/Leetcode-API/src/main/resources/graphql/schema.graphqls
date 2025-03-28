@@ -1,9 +1,9 @@
 type Query {
-leetcodeStats(username: String!): LeetcodeData
+leetcodeStats(username: String!): stats
 
 }
 
-type LeetcodeData {
+type stats {
 easy: Int
 medium: Int
 hard: Int
