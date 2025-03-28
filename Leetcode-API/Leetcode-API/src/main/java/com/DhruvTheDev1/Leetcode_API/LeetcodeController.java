@@ -15,8 +15,8 @@ public class LeetcodeController {
   }
 
   @GetMapping("/stats")
-  public String getLeetcodeStats() {
+  public LeetcodeData getLeetcodeStats() {
     LeetcodeData data = leetcodeService.getStats();
-    return data.toString(); // Return as string instead of JSON
+    return data;
   }
 }

@@ -16,7 +16,6 @@ public class LeetcodeService {
         .baseUrl("https://leetcode.com/graphql/")
         .defaultHeader(HttpHeaders.CONTENT_TYPE, "application/json")
         .build();
-    System.out.println("LeetcodeService Bean has been created");
   }
 
   public LeetcodeData getStats() {
