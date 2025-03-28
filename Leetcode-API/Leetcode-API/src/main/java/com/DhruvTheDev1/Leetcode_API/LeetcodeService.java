@@ -11,12 +11,12 @@ public class LeetcodeService {
 
   private final WebClient webClient;
 
-  // constructing webClient with GraphQL server base URL
-  public LeetcodeService(WebClient.Builder webClient) {
-    this.webClient = WebClient.builder()
+  public LeetcodeService(WebClient.Builder webClientBuilder) {
+    this.webClient = webClientBuilder
         .baseUrl("https://leetcode.com/graphql/")
         .defaultHeader(HttpHeaders.CONTENT_TYPE, "application/json")
         .build();
+    System.out.println("LeetcodeService Bean has been created");
   }
 
   public LeetcodeData getStats() {
@@ -35,10 +35,10 @@ public class LeetcodeService {
         .bodyToMono(String.class)
         .block();
 
-        return convertToObjects(response);
-  }
+        return leetcodeData(response);
+      }
 
-  public LeetcodeData convertToObjects(String response) {
+  public LeetcodeData leetcodeData(String response) {
     JSONObject jsonObj = new JSONObject(response);
 
     // getting acSubmissionNum array in response
@@ -69,11 +69,10 @@ public class LeetcodeService {
   }
 
   // testing
-  public static void main(String[] args) {
-    LeetcodeService service = new LeetcodeService(WebClient.builder());
-    LeetcodeData stats = service.getStats();
-    System.out.println("Total: ");
-    System.out.println(stats.getTotal());
-    
-  }
+  // public static void main(String[] args) {
+  // LeetcodeService service = new LeetcodeService(WebClient.builder());
+  // LeetcodeData stats = service.getStats();
+  // System.out.println("Total: ");
+  // System.out.println(stats.getTotal());
+  // }
 }
