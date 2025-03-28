@@ -16,7 +16,7 @@ public class LeetcodeData {
     this.total = total;
   }
 
-  @JsonProperty("Easy Solved:")  
+  @JsonProperty("Easy")  
   public int getEasy() {
     return easy;
   }
@@ -25,7 +25,7 @@ public class LeetcodeData {
     this.easy = easy;
   }
 
-  @JsonProperty("Medium Solved:")  
+  @JsonProperty("Medium")  
   public int getMedium() {
     return medium;
   }
@@ -33,8 +33,8 @@ public class LeetcodeData {
   public void setMedium(int medium) {
     this.medium = medium;
   }
-
-  @JsonProperty("Hard Solved")  
+  
+  @JsonProperty("Hard")  
   public int getHard() {
     return hard;
   }
@@ -43,7 +43,7 @@ public class LeetcodeData {
     this.hard = hard;
   }
 
-  @JsonProperty("Total Solved")  
+  @JsonProperty("Total")  
   public int getTotal() {
     return total;
   }

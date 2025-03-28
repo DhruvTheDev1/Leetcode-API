@@ -1,6 +1,7 @@
 package com.DhruvTheDev1.Leetcode_API;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -14,9 +15,9 @@ public class LeetcodeController {
     this.leetcodeService = leetcodeService;
   }
 
-  @GetMapping("/stats")
-  public LeetcodeData getLeetcodeStats() {
-    LeetcodeData data = leetcodeService.getStats();
+  @GetMapping("/stats/{username}")
+  public LeetcodeData getLeetcodeStats(@PathVariable String username) {
+    LeetcodeData data = leetcodeService.getStats(username);
     return data;
   }
 }
