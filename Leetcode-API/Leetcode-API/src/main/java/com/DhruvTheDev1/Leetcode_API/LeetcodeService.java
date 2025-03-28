@@ -18,13 +18,13 @@ public class LeetcodeService {
         .build();
   }
 
-  public LeetcodeData getStats() {
+  public LeetcodeData getStats(String username) {
     // query - POST request
     String query = "{\r\n" + //
         "    \"query\": \"query getUserProfile($username: String!) { matchedUser(username: $username) { submitStats { acSubmissionNum { difficulty count } } } }\",\r\n"
         + //
         "    \"variables\": {\r\n" + //
-        "        \"username\": \"\"\r\n" + //
+        "        \"username\": \"" + username + "\"\r\n" + 
         "    }\r\n" + //
         "}";
 
