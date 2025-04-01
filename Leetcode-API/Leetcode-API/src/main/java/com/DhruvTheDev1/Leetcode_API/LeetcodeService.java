@@ -24,18 +24,25 @@ public class LeetcodeService {
         "    \"query\": \"query getUserProfile($username: String!) { matchedUser(username: $username) { submitStats { acSubmissionNum { difficulty count } } } }\",\r\n"
         + //
         "    \"variables\": {\r\n" + //
-        "        \"username\": \"" + username + "\"\r\n" + 
+        "        \"username\": \"" + username + "\"\r\n" +
         "    }\r\n" + //
         "}";
 
-    String response = webClient.post()
-        .bodyValue(query)
-        .retrieve()
-        .bodyToMono(String.class)
-        .block();
+    try {
+      String response = webClient.post()
+          .bodyValue(query)
+          .retrieve()
+          .bodyToMono(String.class)
+          .block();
 
-        return leetcodeData(response);
-      }
+      return leetcodeData(response);
+
+    } catch (Exception e) {
+      // not valid username
+      return new LeetcodeData(0, 0, 0, 0);
+    }
+
+  }
 
   public LeetcodeData leetcodeData(String response) {
     JSONObject jsonObj = new JSONObject(response);

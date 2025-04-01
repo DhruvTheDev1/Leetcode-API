@@ -1,14 +1,11 @@
 package com.DhruvTheDev1.Leetcode_API;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-
 public class LeetcodeData {
   private int easy;
   private int medium;
   private int hard;
   private int total;
 
-  // testing
   public LeetcodeData(int easy, int medium, int hard, int total) {
     this.easy = easy;
     this.medium = medium;
@@ -16,7 +13,6 @@ public class LeetcodeData {
     this.total = total;
   }
 
-  @JsonProperty("Easy")  
   public int getEasy() {
     return easy;
   }
@@ -25,7 +21,6 @@ public class LeetcodeData {
     this.easy = easy;
   }
 
-  @JsonProperty("Medium")  
   public int getMedium() {
     return medium;
   }
@@ -34,7 +29,6 @@ public class LeetcodeData {
     this.medium = medium;
   }
   
-  @JsonProperty("Hard")  
   public int getHard() {
     return hard;
   }
@@ -43,7 +37,6 @@ public class LeetcodeData {
     this.hard = hard;
   }
 
-  @JsonProperty("Total")  
   public int getTotal() {
     return total;
   }
