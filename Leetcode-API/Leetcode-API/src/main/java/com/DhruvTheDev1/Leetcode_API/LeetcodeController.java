@@ -1,11 +1,13 @@
 package com.DhruvTheDev1.Leetcode_API;
 
+import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestParam;
 
-@RestController
+@Controller
 @RequestMapping("/leetcode")
 public class LeetcodeController {
 
@@ -15,9 +17,16 @@ public class LeetcodeController {
     this.leetcodeService = leetcodeService;
   }
 
-  @GetMapping("/stats/{username}")
-  public LeetcodeData getLeetcodeStats(@PathVariable String username) {
+  @GetMapping("/stats")
+  public String form() {
+    return "form";
+  }
+
+  @PostMapping("/stats")
+  public String getLeetcodeStats(@RequestParam String username, Model model) {
     LeetcodeData data = leetcodeService.getStats(username);
-    return data;
+    model.addAttribute("data", data);
+    model.addAttribute("username", username);
+    return "form";
   }
 }

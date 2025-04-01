@@ -20,13 +20,9 @@ public class LeetcodeService {
 
   public LeetcodeData getStats(String username) {
     // query - POST request
-    String query = "{\r\n" + //
-        "    \"query\": \"query getUserProfile($username: String!) { matchedUser(username: $username) { submitStats { acSubmissionNum { difficulty count } } } }\",\r\n"
-        + //
-        "    \"variables\": {\r\n" + //
-        "        \"username\": \"" + username + "\"\r\n" +
-        "    }\r\n" + //
-        "}";
+    String query = "{ \"query\": \"query getUserProfile($username: String!) { " +
+               "matchedUser(username: $username) { submitStats { acSubmissionNum { difficulty count } } } }\", " +
+               "\"variables\": { \"username\": \"" + username + "\" } }";
 
     try {
       String response = webClient.post()
@@ -73,12 +69,4 @@ public class LeetcodeService {
 
     return new LeetcodeData(easy, medium, hard, total);
   }
-
-  // testing
-  // public static void main(String[] args) {
-  // LeetcodeService service = new LeetcodeService(WebClient.builder());
-  // LeetcodeData stats = service.getStats();
-  // System.out.println("Total: ");
-  // System.out.println(stats.getTotal());
-  // }
 }

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Leetcode Stats</title>
+</head>
+<body>
+    <h2>Leetcode Stats</h2>
+    <form th:action="@{/leetcode/stats}" method="post">
+        <input type="text" name="username" placeholder="Enter username" required>
+        <button type="submit">Get Stats</button>
+    </form>
+
+    <p th:if="${data != null}">Easy: <span th:text="${data.easy}"></span></p>
+    <p th:if="${data != null}">Medium: <span th:text="${data.medium}"></span></p>
+    <p th:if="${data != null}">Hard: <span th:text="${data.hard}"></span></p>
+    <p th:if="${data != null}">Total: <span th:text="${data.total}"></span></p>
+    
+</body>
+</html>
