@@ -26,7 +26,6 @@ public class LeetcodeController {
   public String getLeetcodeStats(@RequestParam String username, Model model) {
     LeetcodeData data = leetcodeService.getStats(username);
     model.addAttribute("data", data);
-    model.addAttribute("username", username);
     return "form";
   }
 }

@@ -10,10 +10,15 @@
         <button type="submit">Get Stats</button>
     </form>
 
-    <p th:if="${data != null}">Easy: <span th:text="${data.easy}"></span></p>
-    <p th:if="${data != null}">Medium: <span th:text="${data.medium}"></span></p>
-    <p th:if="${data != null}">Hard: <span th:text="${data.hard}"></span></p>
+    <p th:if="${data != null}"><span class= "easy">Easy:</span><span th:text="${data.easy}"></span></p>
+    <p th:if="${data != null}"><span class= "medium">Medium:</span><span th:text="${data.medium}"></span></p>
+    <p th:if="${data != null}"><span class= "hard">Hard:</span> <span th:text="${data.hard}"></span></p>
     <p th:if="${data != null}">Total: <span th:text="${data.total}"></span></p>
     
+    <style>
+        .easy {color: green;}
+        .medium {color: #FFCC00;}
+        .hard {color: red;}
+    </style>
 </body>
 </html>
