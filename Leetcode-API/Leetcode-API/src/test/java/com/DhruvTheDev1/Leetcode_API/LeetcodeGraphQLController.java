@@ -5,7 +5,7 @@ import org.springframework.graphql.data.method.annotation.QueryMapping;
 import org.springframework.stereotype.Controller;
 
 @Controller
-public class LeetcodeControllerTestTemp {
+public class LeetcodeGraphQLController  {
   @QueryMapping
   public LeetcodeData leetcodeStats(@Argument String username) {
 
